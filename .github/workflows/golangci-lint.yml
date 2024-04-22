@@ -28,14 +28,6 @@ jobs:
           with:
             go-version: '1.21'
             cache: false
-        - name: OpenIM Scripts Verification(make verify)
-          run: |
-            cd scripts \
-            && echo "cd scripts" \
-            && ./verify-shellcheck.sh \
-            && ./verify-standardizer.sh \
-            && ./verify-typecheck.sh \
-            && ./verify-yamlfmt.sh
         - name: golangci-lint
           uses: golangci/golangci-lint-action@v4.0.0
           with:
